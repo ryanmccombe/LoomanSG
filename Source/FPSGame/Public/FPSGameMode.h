@@ -14,10 +14,10 @@ class AFPSGameMode : public AGameModeBase
 public:
 	AFPSGameMode();
 
-	void CompleteMission(APawn* Instigator);
+	void CompleteMission(APawn* Instigator, bool bMissionSuccess);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "GameMode")
-	void OnMissionCompleted(APawn* InstigatingPawn);
+	void OnMissionCompleted(APawn* InstigatingPawn, bool bMissionSuccess);
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Spectating")

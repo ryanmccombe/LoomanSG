@@ -16,12 +16,12 @@ AFPSGameMode::AFPSGameMode()
 	HUDClass = AFPSHUD::StaticClass();
 }
 
-void AFPSGameMode::CompleteMission(APawn* InstigatingPawn) {
+void AFPSGameMode::CompleteMission(APawn* InstigatingPawn, bool bMissionSuccess) {
 	if (InstigatingPawn) {
 		InstigatingPawn->DisableInput(nullptr);
 	}
 
-	OnMissionCompleted(InstigatingPawn);
+	OnMissionCompleted(InstigatingPawn, bMissionSuccess);
 	SwitchToSpectatorCam(InstigatingPawn);
 }
 
